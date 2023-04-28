@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function VideoStreamTubeHeader() {
+export default function Header() {
 	const navigate = useNavigate();
 
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

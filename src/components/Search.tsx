@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import VideoContainer from "./VideoContainer";
 
-interface ApiFetch {
+export interface ApiFetch {
 	method: string;
 	headers: {
 		"Content-Type": string;
@@ -31,7 +31,7 @@ export interface VideoFormatted {
 	id: string;
 }
 
-function VideoStreamTubeSearch() {
+export default function Search() {
 	const { searchQuery } = useParams();
 	const [data, setData] = useState<VideoFormatted[]>([]);
 	useEffect(() => {
@@ -40,10 +40,6 @@ function VideoStreamTubeSearch() {
 
 	function addUrlEncoding(str: string) {
 		return str.split(" ").join("20%");
-	}
-
-	function formatViews(views: number) {
-		return views.toLocaleString();
 	}
 
 	async function createFetchOptions(
@@ -96,11 +92,11 @@ function VideoStreamTubeSearch() {
 		<>
 			<div className="video-search-container">
 				{data.map((item: VideoFormatted) => {
-					return <VideoContainer item={item} key={item.id} formatViews={formatViews}/>;
+					return <VideoContainer item={item} key={item.id}/>;
 				})}
 			</div>
 		</>
 	);
 }
 
-export default VideoStreamTubeSearch;
+
