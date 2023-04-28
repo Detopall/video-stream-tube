@@ -9,6 +9,24 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
+body.dark-mode {
+	background-color: black;
+	color: white;
+}
+
+#dark-light-button {
+	font-size: 1rem;
+	border: none;
+	border-radius: 40%;
+	padding: 0.5rem;
+	background-color: #f00;
+	color: white;
+	position: absolute;
+	top: 0.2rem;
+	left: 0.2rem;
+	cursor: pointer;
+}
+
 .header {
 	display: flex;
 	justify-content: center;
